@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Frontend + Backend Binding</title>
+</head>
+<body>
+
+<h2>Product List</h2>
+<button onclick="getData()">Load Products</button>
+<ul id="productList"></ul>
+
+<script>
+function getData() {
+  fetch("http://localhost:5000/products")
+    .then(res => res.json())
+    .then(data => {
+      let list = document.getElementById("productList");
+      list.innerHTML = "";
+      data.forEach(item => {
+        list.innerHTML += `<li>${item.name} - ₹${item.price}</li>`;
+      });
+    })
+    .catch(err => console.log(err));
+}
+</script>
+
+</body>
+</html>
