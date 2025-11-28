@@ -21,7 +21,7 @@ function App() {
 
   return (
     <>
-      <table border={2} align="center">
+      <table border={2} style={{justifyContent:"center",}}>
         <tr>
           <th>id</th>
           <th>name</th>
