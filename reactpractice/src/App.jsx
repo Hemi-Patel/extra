@@ -5,12 +5,16 @@ import { useEffect, useState } from "react";
 function App() {
   const [Data, setData] = useState([])
   const getData = () => {
+<<<<<<< HEAD
     const token= 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTI4MmEyOGY4MjVmMTdhODc5OTE4MDgiLCJpYXQiOjE3NjQ2NTE1MDV9.WpLZob-Lw_J-yizHX1Ix0i1d_zhazDYsXNKWu03l8IY';
     axios.get('http://localhost:8001/getData',{
       headers:{
         Authorization :`Bearer ${token}`
       }
     })
+=======
+    axios.get('http://localhost:8001/getData')
+>>>>>>> da3c4fc98e8a66a57d602582422999b850d0283f
       .then((res) => {
         console.log(res.data.data)
         setData(res.data.data)
